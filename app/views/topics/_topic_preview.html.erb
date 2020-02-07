@@ -1,0 +1,8 @@
+  <div class="post border rounded px-3 py-1 my-3 text-dark bg-light w50 border-secondary text-left">
+    <h1><a href='<%= group_topic_path(topic.group, topic) %>'><%= topic.title %></a></h1>
+    <p><%= preview(topic.content) %></p>
+    <footer>
+    <%= link_to topic.group.name, group_path(topic.group) %>
+    <%= link_to topic.user.username, user_path(topic.user) %>
+    </footer>
+  </div>

@@ -1,0 +1,13 @@
+<%= form_with model: [:group, @topic], class: "text-left" do |f|%>
+  <%= f.hidden_field :group_id %>
+  <%= f.hidden_field :user_id %>
+  <div class="form-group">
+  <%= f.label :title, "Title:" %>
+  <%= f.text_field :title, class:"form-control" %>
+  </div>
+  <div class="form-group">
+  <%= f.label :content, "Content:" %>
+  <%= f.text_area :content, class:"form-control" %>
+  </div>
+  <%= f.submit "Submit Post", class: "btn-primary" %>
+<% end %>

@@ -1,0 +1,8 @@
+<div class="post border rounded px-3 py-1 my-3 text-dark bg-light w50 border-secondary">
+  <h1><%= @group.name %></h1>
+  <button class="btn btn-primary">
+  <%= link_to "Add a New Topic", new_group_topic_path(@group), class: "text-light" %>
+  </button>
+</div>
+<%= render partial: 'topics/topics_preview', locals: {topics: @topics} %>
+
