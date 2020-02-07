@@ -1,0 +1,6 @@
+<div class="post border rounded px-3 py-1 my-3 text-dark bg-light w50 border-secondary text-left">
+  <p><%= comment.content %></p>
+  <footer>
+    <%= link_to comment.user.username, user_path(comment.user) %>
+  </footer>
+</div>
