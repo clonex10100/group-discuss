@@ -722,3 +722,13 @@ Processing by UsersController#create as HTML
 Completed 200 OK in 384ms (Views: 4.4ms | ActiveRecord: 0.0ms | Allocations: 5992)
 
 
+Started GET "/" for ::1 at 2020-02-08 14:48:33 -0500
+Processing by TopicsController#index as HTML
+  Rendering topics/index.html.erb within layouts/application
+  [1m[36mTopic Load (0.3ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/topics/_topics_preview.html.erb:1
+  Rendered topics/_topics_preview.html.erb (Duration: 3.7ms | Allocations: 576)
+  Rendered topics/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 649)
+Completed 200 OK in 14ms (Views: 11.4ms | ActiveRecord: 0.3ms | Allocations: 2503)
+
+
