@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   def create
     @comment = Comment.create(comment_params)
-    redirect_to group_topic_path(@comment.topic.group, @comment.topic)
+    redirect_to topic_path(@comment.topic)
   end
 
   private

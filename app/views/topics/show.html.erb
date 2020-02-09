@@ -6,7 +6,7 @@
     <%= link_to @topic.user.username, user_path(@topic.user) %>
     </footer>
 </div>
-<%= render partial: 'comments/form', locals: {group: @group, topic: @topic, comment: @comment} %>
+<%= render partial: 'comments/form', locals: {topic: @topic, comment: @comment} %>
 <% @topic.comments.each do |comment| %>
   <%= render partial: 'comments/comment', locals: {comment: comment} %>
 <% end %>

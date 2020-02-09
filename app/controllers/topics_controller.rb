@@ -1,9 +1,11 @@
 class TopicsController < ApplicationController
   def index
+    #Topic sorting
     @topics = Topic.all
   end
 
   def show
+    #implement comment sorting
     @topic = Topic.find(params[:id])
     @group = @topic.group
     @comment = @topic.comments.build(user_id: current_user_id)

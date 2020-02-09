@@ -1,0 +1,5 @@
+sorting of comments and topics
+user pages that show their submissions
+
+potential:
+pagination

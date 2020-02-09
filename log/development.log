@@ -732,3 +732,649 @@ Processing by TopicsController#index as HTML
 Completed 200 OK in 14ms (Views: 11.4ms | ActiveRecord: 0.3ms | Allocations: 2503)
 
 
+Started GET "/" for 127.0.0.1 at 2020-02-08 23:30:48 -0500
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TopicsController#index as HTML
+  Rendering topics/index.html.erb within layouts/application
+  [1m[36mTopic Load (0.8ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/topics/_topics_preview.html.erb:1
+  Rendered topics/_topics_preview.html.erb (Duration: 9.7ms | Allocations: 1137)
+  Rendered topics/index.html.erb within layouts/application (Duration: 13.2ms | Allocations: 1619)
+Completed 200 OK in 105ms (Views: 63.9ms | ActiveRecord: 2.2ms | Allocations: 9773)
+
+
+Started GET "/groups" for 127.0.0.1 at 2020-02-09 00:51:18 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GroupsController#index as HTML
+  Rendering groups/index.html.erb within layouts/application
+  [1m[36mGroup Load (0.9ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/views/groups/index.html.erb:2
+  Rendered groups/index.html.erb within layouts/application (Duration: 19.2ms | Allocations: 3705)
+Completed 200 OK in 34ms (Views: 24.1ms | ActiveRecord: 2.8ms | Allocations: 6882)
+
+
+Started GET "/" for 127.0.0.1 at 2020-02-09 00:51:19 -0500
+Processing by TopicsController#index as HTML
+  Rendering topics/index.html.erb within layouts/application
+  [1m[36mTopic Load (0.4ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/topics/_topics_preview.html.erb:1
+  Rendered topics/_topics_preview.html.erb (Duration: 2.5ms | Allocations: 605)
+  Rendered topics/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 680)
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 0.4ms | Allocations: 2550)
+
+
+Started GET "/groups" for 127.0.0.1 at 2020-02-09 00:51:20 -0500
+Processing by GroupsController#index as HTML
+  Rendering groups/index.html.erb within layouts/application
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/views/groups/index.html.erb:2
+  Rendered groups/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 675)
+Completed 200 OK in 12ms (Views: 9.7ms | ActiveRecord: 0.3ms | Allocations: 2529)
+
+
+Started GET "/login" for 127.0.0.1 at 2020-02-09 00:51:23 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 13.6ms | Allocations: 3658)
+Completed 200 OK in 24ms (Views: 21.6ms | ActiveRecord: 0.0ms | Allocations: 6096)
+
+
+Started GET "/" for 127.0.0.1 at 2020-02-09 00:56:25 -0500
+Processing by TopicsController#index as HTML
+  Rendering topics/index.html.erb within layouts/application
+  [1m[36mTopic Load (0.4ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/topics/_topics_preview.html.erb:1
+  Rendered topics/_topics_preview.html.erb (Duration: 4.2ms | Allocations: 585)
+  Rendered topics/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 660)
+Completed 200 OK in 29ms (Views: 22.6ms | ActiveRecord: 0.4ms | Allocations: 2532)
+
+
+Started GET "/groups" for 127.0.0.1 at 2020-02-09 00:56:27 -0500
+Processing by GroupsController#index as HTML
+  Rendering groups/index.html.erb within layouts/application
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/views/groups/index.html.erb:2
+  Rendered groups/index.html.erb within layouts/application (Duration: 7.3ms | Allocations: 688)
+Completed 200 OK in 24ms (Views: 18.4ms | ActiveRecord: 0.4ms | Allocations: 2554)
+
+
+Started GET "/groups/1" for 127.0.0.1 at 2020-02-09 00:56:29 -0500
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGroup Load (1.6ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:7:in `show'
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mTopic Load (1.5ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."group_id" = ?[0m  [["group_id", 1]]
+  ↳ app/views/topics/_topics_preview.html.erb:1
+  Rendered topics/_topics_preview.html.erb (Duration: 17.9ms | Allocations: 1229)
+  Rendered groups/show.html.erb within layouts/application (Duration: 21.6ms | Allocations: 1496)
+Completed 200 OK in 128ms (Views: 31.2ms | ActiveRecord: 3.1ms | Allocations: 8325)
+
+
+Started GET "/groups/1/topics/new" for 127.0.0.1 at 2020-02-09 00:56:56 -0500
+Processing by TopicsController#new as HTML
+  Parameters: {"group_id"=>"1"}
+  [1m[36mGroup Load (1.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/topics_controller.rb:15:in `new'
+  Rendering topics/new.html.erb within layouts/application
+  Rendered topics/_form.html.erb (Duration: 16.2ms | Allocations: 1154)
+  Rendered topics/new.html.erb within layouts/application (Duration: 22.0ms | Allocations: 1477)
+Completed 200 OK in 91ms (Views: 35.7ms | ActiveRecord: 2.8ms | Allocations: 8021)
+
+
+Started GET "/" for 127.0.0.1 at 2020-02-09 01:04:58 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TopicsController#index as HTML
+  Rendering topics/index.html.erb within layouts/application
+  [1m[36mTopic Load (0.2ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/topics/_topics_preview.html.erb:1
+  Rendered topics/_topics_preview.html.erb (Duration: 1.8ms | Allocations: 874)
+  Rendered topics/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 948)
+Completed 200 OK in 10ms (Views: 6.0ms | ActiveRecord: 0.2ms | Allocations: 4228)
+
+
+Started GET "/groups" for 127.0.0.1 at 2020-02-09 01:05:00 -0500
+Processing by GroupsController#index as HTML
+  Rendering groups/index.html.erb within layouts/application
+  [1m[36mGroup Load (1.9ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/views/groups/index.html.erb:2
+  Rendered groups/index.html.erb within layouts/application (Duration: 32.7ms | Allocations: 2881)
+Completed 200 OK in 57ms (Views: 44.7ms | ActiveRecord: 1.9ms | Allocations: 5570)
+
+
+Started GET "/" for 127.0.0.1 at 2020-02-09 01:05:01 -0500
+Processing by TopicsController#index as HTML
+  Rendering topics/index.html.erb within layouts/application
+  [1m[36mTopic Load (0.6ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/topics/_topics_preview.html.erb:1
+  Rendered topics/_topics_preview.html.erb (Duration: 9.2ms | Allocations: 576)
+  Rendered topics/index.html.erb within layouts/application (Duration: 10.2ms | Allocations: 649)
+Completed 200 OK in 28ms (Views: 22.0ms | ActiveRecord: 0.6ms | Allocations: 2503)
+
+
+Started GET "/groups" for 127.0.0.1 at 2020-02-09 01:05:08 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GroupsController#index as HTML
+  Rendering groups/index.html.erb within layouts/application
+  [1m[36mGroup Load (0.8ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/views/groups/index.html.erb:2
+  Rendered groups/index.html.erb within layouts/application (Duration: 34.4ms | Allocations: 3319)
+Completed 200 OK in 103ms (Views: 83.9ms | ActiveRecord: 5.8ms | Allocations: 6157)
+
+
+Started GET "/login" for 127.0.0.1 at 2020-02-09 01:05:10 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1936)
+Completed 200 OK in 23ms (Views: 19.8ms | ActiveRecord: 0.0ms | Allocations: 3948)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-02-09 01:05:13 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"h+VZN4XiL0jwHSry+r3rek/l9bEPbZ5u+Jl7W2UfDkQlkuSDBLPNGrd6uv3B0DLhBCMOrwK0FVay1JibodA/HQ==", "username"=>"clone", "password"=>"[FILTERED]", "commit"=>"sign in"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "clone"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1915)
+Completed 200 OK in 56ms (Views: 18.8ms | ActiveRecord: 3.4ms | Allocations: 6075)
+
+
+Started GET "/signup" for 127.0.0.1 at 2020-02-09 01:05:14 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 16.0ms | Allocations: 1182)
+Completed 200 OK in 70ms (Views: 34.9ms | ActiveRecord: 1.6ms | Allocations: 6474)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-02-09 01:05:19 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"rmn+5vE9sPGn41BPyVhMxp4AlfnQiUFw5eMj1byIq4VUO5jWpsL/kIZirhculBhjCBHay7ndUif+UWayFoGqqA==", "user"=>{"username"=>"clone", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "clone"], ["password_digest", "$2a$12$ITTOxqQL5x8HTrz9ZikgxezmorX08tL.ZKzCJGWFMvHOzoj95HNRq"], ["created_at", "2020-02-09 06:05:19.993861"], ["updated_at", "2020-02-09 06:05:19.993861"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (11.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 583ms (ActiveRecord: 12.6ms | Allocations: 3789)
+
+
+Started GET "/" for 127.0.0.1 at 2020-02-09 01:05:20 -0500
+Processing by TopicsController#index as HTML
+  Rendering topics/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mTopic Load (0.2ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/topics/_topics_preview.html.erb:1
+  Rendered topics/_topics_preview.html.erb (Duration: 3.1ms | Allocations: 909)
+  Rendered topics/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1638)
+Completed 200 OK in 13ms (Views: 8.6ms | ActiveRecord: 0.8ms | Allocations: 4888)
+
+
+Started GET "/groups" for 127.0.0.1 at 2020-02-09 01:05:22 -0500
+Processing by GroupsController#index as HTML
+  Rendering groups/index.html.erb within layouts/application
+  [1m[36mGroup Load (0.6ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/views/groups/index.html.erb:2
+  Rendered groups/index.html.erb within layouts/application (Duration: 8.3ms | Allocations: 680)
+Completed 200 OK in 27ms (Views: 23.7ms | ActiveRecord: 0.6ms | Allocations: 2666)
+
+
+Started GET "/groups/2" for 127.0.0.1 at 2020-02-09 01:05:25 -0500
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGroup Load (0.7ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:7:in `show'
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mTopic Load (1.0ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."group_id" = ?[0m  [["group_id", 2]]
+  ↳ app/views/topics/_topics_preview.html.erb:1
+  Rendered topics/_topics_preview.html.erb (Duration: 11.7ms | Allocations: 829)
+  Rendered groups/show.html.erb within layouts/application (Duration: 13.6ms | Allocations: 947)
+Completed 200 OK in 41ms (Views: 25.6ms | ActiveRecord: 1.8ms | Allocations: 3948)
+
+
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from load at /home/clone/.rvm/gems/ruby-2.6.1/bin/rake:23)
+Started GET "/groups/2" for 127.0.0.1 at 2020-02-09 01:06:08 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:7:in `show'
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mTopic Load (0.3ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."group_id" = ?[0m  [["group_id", 2]]
+  ↳ app/views/topics/_topics_preview.html.erb:1
+  Rendered topics/_topics_preview.html.erb (Duration: 5.2ms | Allocations: 1787)
+  Rendered groups/show.html.erb within layouts/application (Duration: 27.8ms | Allocations: 2445)
+Completed 200 OK in 93ms (Views: 66.1ms | ActiveRecord: 1.7ms | Allocations: 17921)
+
+
+Started GET "/groups/2/topics/new" for 127.0.0.1 at 2020-02-09 01:06:16 -0500
+Processing by TopicsController#new as HTML
+  Parameters: {"group_id"=>"2"}
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/topics_controller.rb:15:in `new'
+  Rendering topics/new.html.erb within layouts/application
+  Rendered topics/_form.html.erb (Duration: 4.2ms | Allocations: 1435)
+  Rendered topics/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1760)
+Completed 200 OK in 25ms (Views: 11.2ms | ActiveRecord: 0.5ms | Allocations: 8924)
+
+
+Started GET "/groups/2" for 127.0.0.1 at 2020-02-09 01:06:20 -0500
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGroup Load (0.6ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:7:in `show'
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mTopic Load (0.5ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."group_id" = ?[0m  [["group_id", 2]]
+  ↳ app/views/topics/_topics_preview.html.erb:1
+  Rendered topics/_topics_preview.html.erb (Duration: 9.3ms | Allocations: 662)
+  Rendered groups/show.html.erb within layouts/application (Duration: 11.4ms | Allocations: 784)
+Completed 200 OK in 32ms (Views: 22.8ms | ActiveRecord: 1.1ms | Allocations: 3291)
+
+
+Started GET "/groups/2/topics/new" for 127.0.0.1 at 2020-02-09 01:06:29 -0500
+Processing by TopicsController#new as HTML
+  Parameters: {"group_id"=>"2"}
+  [1m[36mGroup Load (0.6ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/topics_controller.rb:15:in `new'
+  Rendering topics/new.html.erb within layouts/application
+  Rendered topics/_form.html.erb (Duration: 6.6ms | Allocations: 506)
+  Rendered topics/new.html.erb within layouts/application (Duration: 8.0ms | Allocations: 574)
+Completed 200 OK in 51ms (Views: 38.6ms | ActiveRecord: 0.6ms | Allocations: 3077)
+
+
+Started GET "/" for ::1 at 2020-02-09 01:06:47 -0500
+Processing by TopicsController#index as HTML
+  Rendering topics/index.html.erb within layouts/application
+  [1m[36mTopic Load (0.2ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/topics/_topics_preview.html.erb:1
+  Rendered topics/_topics_preview.html.erb (Duration: 2.2ms | Allocations: 597)
+  Rendered topics/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 808)
+Completed 200 OK in 12ms (Views: 8.6ms | ActiveRecord: 0.2ms | Allocations: 2730)
+
+
+Started GET "/login" for ::1 at 2020-02-09 01:06:48 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 10.6ms | Allocations: 3324)
+Completed 200 OK in 20ms (Views: 18.3ms | ActiveRecord: 0.0ms | Allocations: 5753)
+
+
+Started POST "/login" for ::1 at 2020-02-09 01:06:51 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"oF16/rKfciOSwPLaFnwdzHImwNdpDSi2CZuudftgv+gYM3/2bP0qxxfOr6F+7JzTUPo5zcqvf7JKiHOZyPgEMg==", "username"=>"clone", "password"=>"[FILTERED]", "commit"=>"sign in"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "clone"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 513ms (ActiveRecord: 4.6ms | Allocations: 5432)
+
+
+Started GET "/" for ::1 at 2020-02-09 01:06:51 -0500
+Processing by TopicsController#index as HTML
+  Rendering topics/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mTopic Load (0.1ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/topics/_topics_preview.html.erb:1
+  Rendered topics/_topics_preview.html.erb (Duration: 1.3ms | Allocations: 576)
+  Rendered topics/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1298)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.5ms | Allocations: 3283)
+
+
+Started GET "/groups" for ::1 at 2020-02-09 01:06:53 -0500
+Processing by GroupsController#index as HTML
+  Rendering groups/index.html.erb within layouts/application
+  [1m[36mGroup Load (1.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/views/groups/index.html.erb:2
+  Rendered groups/index.html.erb within layouts/application (Duration: 10.6ms | Allocations: 837)
+Completed 200 OK in 29ms (Views: 24.1ms | ActiveRecord: 1.0ms | Allocations: 2963)
+
+
+Started GET "/groups/1" for ::1 at 2020-02-09 01:06:55 -0500
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGroup Load (0.5ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:7:in `show'
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mTopic Load (0.5ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."group_id" = ?[0m  [["group_id", 1]]
+  ↳ app/views/topics/_topics_preview.html.erb:1
+  Rendered topics/_topics_preview.html.erb (Duration: 6.4ms | Allocations: 662)
+  Rendered groups/show.html.erb within layouts/application (Duration: 8.4ms | Allocations: 779)
+Completed 200 OK in 86ms (Views: 71.5ms | ActiveRecord: 1.0ms | Allocations: 3273)
+
+
+Started GET "/groups/1/topics/new" for ::1 at 2020-02-09 01:07:16 -0500
+Processing by TopicsController#new as HTML
+  Parameters: {"group_id"=>"1"}
+  [1m[36mGroup Load (0.5ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/topics_controller.rb:15:in `new'
+  Rendering topics/new.html.erb within layouts/application
+  Rendered topics/_form.html.erb (Duration: 5.8ms | Allocations: 514)
+  Rendered topics/new.html.erb within layouts/application (Duration: 7.0ms | Allocations: 582)
+Completed 200 OK in 36ms (Views: 24.0ms | ActiveRecord: 0.5ms | Allocations: 3107)
+
+
+Started POST "/groups/1/topics" for ::1 at 2020-02-09 01:07:21 -0500
+Processing by TopicsController#create as HTML
+  Parameters: {"authenticity_token"=>"B54u0d3FySyUkEUoZCTA4BydUs9t4jWASlUAYhNp0rWtdVlkfmXuVVJ+tlNlu+jdIYZXftLX+USlDbLrWxzvjA==", "topic"=>{"group_id"=>"1", "user_id"=>"6", "title"=>"ping", "content"=>"pong\r\n"}, "commit"=>"Submit Post", "group_id"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/topics_controller.rb:20:in `create'
+  [1m[36mGroup Load (0.6ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/topics_controller.rb:20:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/topics_controller.rb:20:in `create'
+  [1m[36mTopic Create (1.6ms)[0m  [1m[32mINSERT INTO "topics" ("title", "content", "user_id", "group_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "ping"], ["content", "pong\r\n"], ["user_id", 6], ["group_id", 1], ["created_at", "2020-02-09 06:07:21.839335"], ["updated_at", "2020-02-09 06:07:21.839335"]]
+  ↳ app/controllers/topics_controller.rb:20:in `create'
+  [1m[35m (16.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/topics_controller.rb:20:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 127ms (ActiveRecord: 19.3ms | Allocations: 10006)
+
+
+Started GET "/" for ::1 at 2020-02-09 01:07:21 -0500
+Processing by TopicsController#index as HTML
+  Rendering topics/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mTopic Load (0.5ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/topics/_topics_preview.html.erb:1
+  [1m[36mGroup Load (0.7ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/topics/_topic_preview.html.erb:2
+  Rendered topics/_topic_preview.html.erb (Duration: 325.3ms | Allocations: 67233)
+  Rendered topics/_topics_preview.html.erb (Duration: 332.9ms | Allocations: 68038)
+  Rendered topics/index.html.erb within layouts/application (Duration: 342.0ms | Allocations: 68647)
+Completed 500 Internal Server Error in 350ms (ActiveRecord: 2.1ms | Allocations: 69083)
+
+
+  
+ActionView::Template::Error (undefined method `group_topic_path' for #<#<Class:0x000055767b15aaa8>:0x000055767bb28878>
+Did you mean?  group_topics_path):
+    1: <div class="post border rounded px-3 py-1 my-3 text-dark bg-light w50 border-secondary text-left">
+    2:   <h1><a href='<%= group_topic_path(topic.group, topic) %>'><%= topic.title %></a></h1>
+    3:   <p><%= preview(topic.content) %></p>
+    4:   <footer>
+    5:   <%= link_to topic.group.name, group_path(topic.group) %>
+  
+app/views/topics/_topic_preview.html.erb:2
+app/views/topics/_topics_preview.html.erb:2
+app/views/topics/_topics_preview.html.erb:1
+app/views/topics/index.html.erb:6
+Started GET "/" for ::1 at 2020-02-09 01:08:17 -0500
+Processing by TopicsController#index as HTML
+  Rendering topics/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mTopic Load (0.2ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/topics/_topics_preview.html.erb:1
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/topics/_topic_preview.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/topics/_topic_preview.html.erb:6
+  Rendered topics/_topic_preview.html.erb (Duration: 5.4ms | Allocations: 1672)
+  Rendered topics/_topics_preview.html.erb (Duration: 8.2ms | Allocations: 2592)
+  Rendered topics/index.html.erb within layouts/application (Duration: 13.1ms | Allocations: 3472)
+Completed 200 OK in 21ms (Views: 19.0ms | ActiveRecord: 0.6ms | Allocations: 6523)
+
+
+Started GET "/topics/1.2" for ::1 at 2020-02-09 01:08:18 -0500
+Processing by TopicsController#show as 
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.9ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/topics_controller.rb:9:in `show'
+Completed 404 Not Found in 21ms (ActiveRecord: 0.9ms | Allocations: 1157)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Topic with 'id'=1):
+  
+app/controllers/topics_controller.rb:9:in `show'
+Started GET "/" for ::1 at 2020-02-09 01:08:32 -0500
+Processing by TopicsController#index as HTML
+  Rendering topics/index.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mTopic Load (0.4ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/topics/_topics_preview.html.erb:1
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/topics/_topic_preview.html.erb:5
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/topics/_topic_preview.html.erb:6
+  Rendered topics/_topic_preview.html.erb (Duration: 17.2ms | Allocations: 1641)
+  Rendered topics/_topics_preview.html.erb (Duration: 27.5ms | Allocations: 2561)
+  Rendered topics/index.html.erb within layouts/application (Duration: 38.8ms | Allocations: 3441)
+Completed 200 OK in 65ms (Views: 59.1ms | ActiveRecord: 2.0ms | Allocations: 6489)
+
+
+Started GET "/topics/2" for ::1 at 2020-02-09 01:08:33 -0500
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTopic Load (0.8ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/topics_controller.rb:9:in `show'
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/topics_controller.rb:10:in `show'
+  Rendering topics/show.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/topics/show.html.erb:6
+  Rendered comments/_form.html.erb (Duration: 329.0ms | Allocations: 65681)
+  Rendered topics/show.html.erb within layouts/application (Duration: 342.4ms | Allocations: 66864)
+Completed 500 Internal Server Error in 437ms (ActiveRecord: 6.4ms | Allocations: 75156)
+
+
+  
+ActionView::Template::Error (undefined method `group_topic_comments_path' for #<#<Class:0x000055767ade6278>:0x000055767befb450>
+Did you mean?  group_topics_path):
+    1: <div class="post border rounded px-3 py-1 my-3 text-dark bg-light w50 border-secondary text-left">
+    2: <%= form_with model: [group, topic, comment] do |f|%>
+    3:   <%= f.hidden_field :user_id %>
+    4:   <%= f.hidden_field :topic_id %>
+    5:   <%= f.label :content, "Leave A Comment" %>
+  
+app/views/comments/_form.html.erb:2
+app/views/topics/show.html.erb:9
+Started GET "/topics/2" for ::1 at 2020-02-09 01:09:09 -0500
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTopic Load (0.6ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/topics_controller.rb:9:in `show'
+  [1m[36mGroup Load (0.6ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/topics_controller.rb:10:in `show'
+  Rendering topics/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/topics/show.html.erb:6
+  Rendered comments/_form.html.erb (Duration: 6.6ms | Allocations: 621)
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."topic_id" = ?[0m  [["topic_id", 2]]
+  ↳ app/views/topics/show.html.erb:10
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:4
+  Rendered comments/_comment.html.erb (Duration: 13.6ms | Allocations: 1604)
+  Rendered topics/show.html.erb within layouts/application (Duration: 47.4ms | Allocations: 4339)
+Completed 200 OK in 100ms (Views: 71.7ms | ActiveRecord: 2.9ms | Allocations: 8682)
+
+
+Started POST "/topics/2/comments" for ::1 at 2020-02-09 01:09:12 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"DykxKyuqp/y3jEEUATeHZN7atUaCOCqGBzQ0zT0Ea7GP0VoyCi13OkJ26uVUB83M36MV4kPrOwovpOWP2BQpUQ==", "comment"=>{"user_id"=>"6", "topic_id"=>"2", "content"=>"ping"}, "commit"=>"Submit Comment", "topic_id"=>"2"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:3:in `create'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:3:in `create'
+  [1m[36mTopic Load (0.5ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:3:in `create'
+  [1m[36mComment Create (1.0ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "topic_id") VALUES (?, ?, ?)[0m  [["content", "ping"], ["user_id", 6], ["topic_id", 2]]
+  ↳ app/controllers/comments_controller.rb:3:in `create'
+  [1m[35m (12.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:3:in `create'
+  [1m[36mGroup Load (0.7ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 316ms (ActiveRecord: 16.4ms | Allocations: 49974)
+
+
+  
+NoMethodError (undefined method `group_topic_path' for #<CommentsController:0x00007f9a80728428>
+Did you mean?  group_topics_path):
+  
+app/controllers/comments_controller.rb:4:in `create'
+Started POST "/topics/2/comments" for ::1 at 2020-02-09 01:09:45 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"DykxKyuqp/y3jEEUATeHZN7atUaCOCqGBzQ0zT0Ea7GP0VoyCi13OkJ26uVUB83M36MV4kPrOwovpOWP2BQpUQ==", "comment"=>{"user_id"=>"6", "topic_id"=>"2", "content"=>"ping"}, "commit"=>"Submit Comment", "topic_id"=>"2"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:3:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:3:in `create'
+  [1m[36mTopic Load (0.2ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:3:in `create'
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "topic_id") VALUES (?, ?, ?)[0m  [["content", "ping"], ["user_id", 6], ["topic_id", 2]]
+  ↳ app/controllers/comments_controller.rb:3:in `create'
+  [1m[35m (7.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:3:in `create'
+Redirected to http://localhost:3000/topics/2
+Completed 302 Found in 64ms (ActiveRecord: 10.5ms | Allocations: 19882)
+
+
+Started GET "/topics/2" for ::1 at 2020-02-09 01:09:46 -0500
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTopic Load (0.2ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/topics_controller.rb:9:in `show'
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/topics_controller.rb:10:in `show'
+  Rendering topics/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/topics/show.html.erb:6
+  Rendered comments/_form.html.erb (Duration: 2.0ms | Allocations: 500)
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."topic_id" = ?[0m  [["topic_id", 2]]
+  ↳ app/views/topics/show.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:4
+  Rendered comments/_comment.html.erb (Duration: 2.3ms | Allocations: 676)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:4
+  Rendered comments/_comment.html.erb (Duration: 1.8ms | Allocations: 674)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:4
+  Rendered comments/_comment.html.erb (Duration: 1.8ms | Allocations: 670)
+  Rendered topics/show.html.erb within layouts/application (Duration: 16.3ms | Allocations: 4962)
+Completed 200 OK in 39ms (Views: 23.2ms | ActiveRecord: 1.8ms | Allocations: 12491)
+
+
+Started POST "/topics/2/comments" for ::1 at 2020-02-09 01:09:50 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"hxTkxTDVmp2E9mQxUY+h5Av/kortg8ax1CUx4r1fE34H7I/cEVJKW3EMz8AEv+tMCoYyLixQ1z38teCgWE9Rng==", "comment"=>{"user_id"=>"6", "topic_id"=>"2", "content"=>"pong\r\n\r\n"}, "commit"=>"Submit Comment", "topic_id"=>"2"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:3:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:3:in `create'
+  [1m[36mTopic Load (0.4ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:3:in `create'
+  [1m[36mComment Create (1.0ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "topic_id") VALUES (?, ?, ?)[0m  [["content", "pong\r\n\r\n"], ["user_id", 6], ["topic_id", 2]]
+  ↳ app/controllers/comments_controller.rb:3:in `create'
+  [1m[35m (13.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:3:in `create'
+Redirected to http://localhost:3000/topics/2
+Completed 302 Found in 80ms (ActiveRecord: 16.0ms | Allocations: 5416)
+
+
+Started GET "/topics/2" for ::1 at 2020-02-09 01:09:50 -0500
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTopic Load (0.4ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/topics_controller.rb:9:in `show'
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/topics_controller.rb:10:in `show'
+  Rendering topics/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/topics/show.html.erb:6
+  Rendered comments/_form.html.erb (Duration: 5.2ms | Allocations: 392)
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."topic_id" = ?[0m  [["topic_id", 2]]
+  ↳ app/views/topics/show.html.erb:10
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:4
+  Rendered comments/_comment.html.erb (Duration: 14.4ms | Allocations: 674)
+  [1m[36mCACHE User Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:4
+  Rendered comments/_comment.html.erb (Duration: 14.5ms | Allocations: 674)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:4
+  Rendered comments/_comment.html.erb (Duration: 13.6ms | Allocations: 674)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:4
+  Rendered comments/_comment.html.erb (Duration: 17.3ms | Allocations: 670)
+  Rendered topics/show.html.erb within layouts/application (Duration: 107.2ms | Allocations: 4779)
+Completed 200 OK in 183ms (Views: 141.0ms | ActiveRecord: 2.5ms | Allocations: 8212)
+
+
+Started GET "/groups/1" for ::1 at 2020-02-09 01:09:54 -0500
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGroup Load (0.7ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:7:in `show'
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mTopic Load (0.7ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."group_id" = ?[0m  [["group_id", 1]]
+  ↳ app/views/topics/_topics_preview.html.erb:1
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/topics/_topic_preview.html.erb:6
+  Rendered topics/_topic_preview.html.erb (Duration: 19.5ms | Allocations: 970)
+  Rendered topics/_topics_preview.html.erb (Duration: 42.0ms | Allocations: 2148)
+  Rendered groups/show.html.erb within layouts/application (Duration: 52.7ms | Allocations: 2554)
+Completed 200 OK in 111ms (Views: 83.7ms | ActiveRecord: 1.9ms | Allocations: 6120)
+
+
+Started GET "/topics/2" for ::1 at 2020-02-09 01:09:56 -0500
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTopic Load (0.6ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/topics_controller.rb:9:in `show'
+  [1m[36mGroup Load (0.9ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/topics_controller.rb:10:in `show'
+  Rendering topics/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/topics/show.html.erb:6
+  Rendered comments/_form.html.erb (Duration: 94.8ms | Allocations: 397)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."topic_id" = ?[0m  [["topic_id", 2]]
+  ↳ app/views/topics/show.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:4
+  Rendered comments/_comment.html.erb (Duration: 4.1ms | Allocations: 674)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:4
+  Rendered comments/_comment.html.erb (Duration: 2.6ms | Allocations: 674)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:4
+  Rendered comments/_comment.html.erb (Duration: 2.5ms | Allocations: 674)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:4
+  Rendered comments/_comment.html.erb (Duration: 2.5ms | Allocations: 670)
+  Rendered topics/show.html.erb within layouts/application (Duration: 142.2ms | Allocations: 4792)
+Completed 200 OK in 215ms (Views: 148.2ms | ActiveRecord: 2.3ms | Allocations: 8075)
+
+
+Started GET "/groups" for ::1 at 2020-02-09 01:09:59 -0500
+Processing by GroupsController#index as HTML
+  Rendering groups/index.html.erb within layouts/application
+  [1m[36mGroup Load (1.5ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/views/groups/index.html.erb:2
+  Rendered groups/index.html.erb within layouts/application (Duration: 13.3ms | Allocations: 828)
+Completed 200 OK in 37ms (Views: 29.3ms | ActiveRecord: 1.5ms | Allocations: 2951)
+
+
+Started GET "/" for ::1 at 2020-02-09 01:10:00 -0500
+Processing by TopicsController#index as HTML
+  Rendering topics/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mTopic Load (1.0ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/topics/_topics_preview.html.erb:1
+  [1m[36mGroup Load (0.7ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/topics/_topic_preview.html.erb:5
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/topics/_topic_preview.html.erb:6
+  Rendered topics/_topic_preview.html.erb (Duration: 15.4ms | Allocations: 1471)
+  Rendered topics/_topics_preview.html.erb (Duration: 21.6ms | Allocations: 2141)
+  Rendered topics/index.html.erb within layouts/application (Duration: 33.3ms | Allocations: 2980)
+Completed 200 OK in 55ms (Views: 46.2ms | ActiveRecord: 2.4ms | Allocations: 5096)
+
+
