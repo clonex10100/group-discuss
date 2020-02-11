@@ -12,13 +12,16 @@ class TopicsController < ApplicationController
   end
 
   def new
-    @group = Group.find(params[:group_id])
-    @topic = Topic.new(group_id: @group.id, user_id: current_user_id)
+    @topic = Topic.new(group_id: params[:group_id], user_id: current_user_id)
   end
 
   def create
-    Topic.create(topic_params)
-    redirect_to '/'
+    @topic = Topic.new(topic_params)
+    if @topic.save
+      redirect_to '/'
+    else
+      render 'new'
+    end
   end
   
   private
