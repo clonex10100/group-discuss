@@ -23,8 +23,11 @@ gem 'jbuilder', '~> 2.7'
 #gem 'bcrypt', '~> 3.1.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+# Use bootstrap for style
+gem 'bootstrap', '~> 4.4', '>= 4.4.1'
 # Use kaminari for pagination
-gem 'kaminari-core', '~> 1.2'
+gem 'kaminari', '~> 1.2'
+gem 'bootstrap4-kaminari-views', '~> 1.0', '>= 1.0.1'
 # Use devise for authentication
 gem 'devise', '~> 4.2'
 # Use omniauth for github logins
