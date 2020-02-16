@@ -4,4 +4,8 @@ class Topic < ApplicationRecord
   belongs_to :group
   belongs_to :user
   has_many :comments
+  scope :date_descending, -> { order(created_at: :desc) }
+  scope :date_ascending, -> { order(created_at: :asc) }
+  scope :comments_descending, -> { left_outer_joins(:comments).group('topics.title').order('count(comments.content) desc') }
+  scope :comments_ascending, -> { left_outer_joins(:comments).group('topics.title').order('count(comments.content) asc') }
 end

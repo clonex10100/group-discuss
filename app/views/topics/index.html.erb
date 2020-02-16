@@ -4,4 +4,8 @@
   </div>
 <% end %>
 <%= paginate @topics, theme: 'twitter-bootstrap-4' %>
+<%= form_with url:'/', method: 'get'  do |f| %>
+  <%= f.select(:sort, options_for_select([['Newest', 1], ['Oldest', 2], ['Most Comments', 3], ['Least Comments', 4]])) %>
+  <%= f.submit :sort %>
+<% end %>
 <%= render partial: 'topics/topics_preview', locals: {topics: @topics} %>

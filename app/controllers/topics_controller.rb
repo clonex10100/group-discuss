@@ -2,7 +2,18 @@ class TopicsController < ApplicationController
   before_action :authenticate_user!, only: [:new]
   def index
     #Topic sorting
-    @topics = Topic.all
+    @topics = case params[:sort]
+    when '2'
+      Topic.date_descending
+    when '3'
+      Topic.comments_descending
+    when '4' 
+      Topic.comments_ascending
+    else
+      puts 's'
+      Topic.date_ascending
+    end.page params[:page]
+    #@topics = Topic.comments_descending.page params[:page]
   end
 
   def show
