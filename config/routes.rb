@@ -9,11 +9,4 @@ Rails.application.routes.draw do
   resources :topics, only: [:show] do
       resources :comments, only: [:create]
   end
-  resources :users, only: [:create, :show]
-  get '/signup', to: 'users#new'
-
-  get '/login', to: 'sessions#new'
-  post '/login', to: 'sessions#create'
-
-  post '/signout', to: 'sessions#destroy'
 end
