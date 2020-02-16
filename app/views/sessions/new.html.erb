@@ -1,8 +1,0 @@
-<% puts "i ran #{@user_class}" %>
-<%= form_with url: '/login', method: 'post' do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username, class: "form-control" + valid_status(@user_val), value: @name  %>
-  <%= f.label :password %>
-  <%= f.password_field :password, class: "form-control" + valid_status(@pass_val) %>
-  <%= f.submit 'sign in' %>
-<% end %>
