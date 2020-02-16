@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   resources :topics, only: [:show] do
       resources :comments, only: [:create]
   end
+
+  resources :users, only: [:show]
 end

@@ -1,4 +1,5 @@
 class TopicsController < ApplicationController
+  before_action :authenticate_user!, only: [:new]
   def index
     #Topic sorting
     @topics = Topic.all
@@ -8,11 +9,11 @@ class TopicsController < ApplicationController
     #implement comment sorting
     @topic = Topic.find(params[:id])
     @group = @topic.group
-    @comment = @topic.comments.build(user_id: current_user_id)
+    @comment = @topic.comments.build(user_id: current_user.id) if user_signed_in?
   end
 
   def new
-    @topic = Topic.new(group_id: params[:group_id], user_id: current_user_id)
+    @topic = Topic.new(group_id: params[:group_id], user_id: current_user.id)
   end
 
   def create
