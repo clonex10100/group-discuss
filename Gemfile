@@ -27,6 +27,12 @@ gem 'jbuilder', '~> 2.7'
 gem 'kaminari-core', '~> 1.2'
 # Use devise for authentication
 gem 'devise', '~> 4.2'
+# Use omniauth for github logins
+gem 'omniauth', '~> 1.9'
+gem 'omniauth-github', '~> 1.4'
+# Use dotenv for omniauth secrets
+gem 'dotenv-rails', '~> 2.7', '>= 2.7.5'
+gem 'thin'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
@@ -44,6 +50,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'solargraph'
+  gem 'pry'
 end
 
 group :test do
