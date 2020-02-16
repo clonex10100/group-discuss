@@ -1,3 +1,4 @@
+<%= paginate @topics, theme: 'twitter-bootstrap-4' %>
 <% topics.each do |topic| %>
   <%= render partial: 'topics/topic_preview', locals: {topic: topic} %>
 <% end %>

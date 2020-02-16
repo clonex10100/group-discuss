@@ -5,6 +5,6 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
-    @topics = @group.topics
+    @topics = @group.topics.page params[:page]
   end
 end
