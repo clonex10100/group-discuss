@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_16_043333) do
+ActiveRecord::Schema.define(version: 2020_02_16_055328) do
 
   create_table "comments", force: :cascade do |t|
     t.string "content"
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 2020_02_16_043333) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "provider"
+    t.string "uid"
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
