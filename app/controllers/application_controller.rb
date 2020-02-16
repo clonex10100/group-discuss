@@ -1,15 +1,9 @@
 class ApplicationController < ActionController::Base
-  helper_method :current_user
-  helper_method :current_user_id
-  helper_method :logged_in?
-  def current_user_id
-    session[:user_id]
-  end
-  def current_user
-    User.find(current_user_id)
-  end
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
-  def logged_in?
-    !!session[:user_id]
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
   end
 end

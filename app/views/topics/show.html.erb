@@ -6,7 +6,11 @@
     <%= link_to @topic.user.username, user_path(@topic.user) %>
     </footer>
 </div>
-<%= render partial: 'comments/form', locals: {topic: @topic, comment: @comment} %>
+<% if user_signed_in? %>
+  <%= render partial: 'comments/form', locals: {topic: @topic, comment: @comment} %>
+<% else %>
+  <a href="/users/sign_in"><h3>Sign in to leave a comment</h3></a>
+<% end %>
 <% @topic.comments.each do |comment| %>
-  <%= render partial: 'comments/comment', locals: {comment: comment} %>
+  <%= render partial: 'comments/comment', locals: {comment: comment} unless comment.content.blank? %>
 <% end %>
