@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :rememberable, :omniauthable, omniauth_providers: %i[github]
   has_many :topics
   has_many :comments
+  validates :username, uniqueness: true, presence: true
+  validates :password, confirmation: true, length: {minimum: 6}
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.username = auth.extra.raw_info.login

@@ -1,7 +1,12 @@
 class CommentsController < ApplicationController
   def create
-    @comment = Comment.create(comment_params)
-    redirect_to topic_path(@comment.topic)
+    @comment = Comment.new(comment_params)
+    if @comment.save
+      redirect_to topic_path(@comment.topic)
+    else
+      @topic = @comment.topic
+      render 'topics/show'
+    end
   end
 
   private

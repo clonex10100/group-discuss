@@ -20,3 +20,31 @@ a {
 a:hover {
   text-decoration: none;
 }
+
+div.form-group input {
+    @extend .form-control;
+}
+div.form-group textarea {
+    @extend .form-control;
+}
+div.form-check input {
+    @extend .form-check-input;
+}
+div.field_with_errors input {
+    @extend .is-invalid;
+}
+div.field_with_errors textarea {
+    @extend .is-invalid;
+}
+
+.roundbox {
+    @extend .border;
+    @extend .rounded;
+    @extend .px-3;
+    @extend .py-1;
+    @extend .my-3;
+    @extend .text-dark;
+    @extend .bg-light;
+    @extend .border-secondary;
+    @extend .text-left;
+}

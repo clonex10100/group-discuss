@@ -7,7 +7,7 @@ class TopicsController < ApplicationController
       Topic.date_descending
     when '3'
       Topic.comments_descending
-    when '4' 
+    when '4'
       Topic.comments_ascending
     else
       puts 's'
@@ -19,7 +19,6 @@ class TopicsController < ApplicationController
   def show
     #implement comment sorting
     @topic = Topic.find(params[:id])
-    @group = @topic.group
     @comment = @topic.comments.build(user_id: current_user.id) if user_signed_in?
   end
 
@@ -35,7 +34,7 @@ class TopicsController < ApplicationController
       render 'new'
     end
   end
-  
+
   private
   def topic_params
     params.require(:topic).permit(:group_id, :title, :content, :user_id)
