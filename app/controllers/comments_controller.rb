@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
-      redirect_to topic_path(@comment.topic)
+      redirect_to group_topic_path(@comment.topic.group, @comment.topic)
     else
       @topic = @comment.topic
       render 'topics/show'

@@ -7,7 +7,7 @@
     </footer>
 </div>
 <% if user_signed_in? %>
-  <%= render partial: 'comments/form', locals: {topic: @topic, comment: @comment} %>
+  <%= render partial: 'comments/form', locals: {comment: @comment} %>
 <% else %>
   <a href="/users/sign_in"><h3>Sign in to leave a comment</h3></a>
 <% end %>

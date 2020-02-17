@@ -1,7 +1,7 @@
-<div class="post border rounded px-3 py-1 my-3 text-dark bg-light w50 border-secondary text-left">
+<div class="roundbox">
   <h3>Leave a comment</h3>
-  <%= display_errors_for(@comment) %>
-  <%= form_with model: [topic, comment] do |f|%>
+  <%= display_errors_for(comment) %>
+  <%= form_with model: [comment.topic.group, comment.topic, comment] do |f|%>
     <%= f.hidden_field :user_id %>
     <%= f.hidden_field :topic_id %>
     <div class='form-group'>

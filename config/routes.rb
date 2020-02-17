@@ -4,11 +4,9 @@ Rails.application.routes.draw do
   root 'topics#index'
   #The creation of topics is nested under groups, but topic show pages are top level with comments nested under them to avoid overly long urls
   resources :groups, only: [:index, :show, :new, :create] do
-    resources :topics, only: [:new, :create]
-  end
-
-  resources :topics, only: [:show] do
+    resources :topics, only: [:new, :create, :show] do
       resources :comments, only: [:create]
+    end
   end
 
   resources :users, only: [:show]
