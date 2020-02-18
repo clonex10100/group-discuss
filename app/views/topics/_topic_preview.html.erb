@@ -1,6 +1,6 @@
 <div class="roundbox">
-  <h1><a href='<%= group_topic_path(topic.group, topic) %>'><%= topic.title %></a></h1>
-  <p><%= preview(topic.content) %></p>
+  <h1><%= link_to topic.title, group_topic_path(topic.group, topic) %></h1>
+  <p><%= topic.preview %></p>
   <footer>
   <%= link_to topic.group.name, group_path(topic.group) %>
   <%= link_to topic.user.username, user_path(topic.user) %>
