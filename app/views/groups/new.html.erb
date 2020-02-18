@@ -1,16 +1,4 @@
-<% if @group.errors.any? %>
-  <div id="error_explanation">
-    <h2>
-      <%= pluralize(@group.errors.count, "error") %>
-      prohibited this topic from being posted:
-    </h2>
-    <ul>
-    <% @group.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
+<%= display_errors_for(@group) %>
 <%= form_with model: @group do |f|%>
   <div class="form-group">
     <%= f.label :name %>
