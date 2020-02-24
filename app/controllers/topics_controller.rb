@@ -4,14 +4,17 @@ class TopicsController < ApplicationController
     #Topic sorting
     @topics = case params[:sort]
     when '2'
-      Topic.date_descending
+      Topic.date_ascending
     when '3'
       Topic.comments_descending
     when '4'
       Topic.comments_ascending
+    when '5'
+      Topic.votes_descending
+    when '6'
+      Topic.votes_ascending
     else
-      puts 's'
-      Topic.date_ascending
+      Topic.date_descending
     end.page params[:page]
     #@topics = Topic.comments_descending.page params[:page]
   end

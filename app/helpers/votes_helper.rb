@@ -1,8 +1,8 @@
 module VotesHelper
   def render_vote(vote)
     vote_vals = {1 => 'liked', -1 => 'disliked'}
-    if vote.value
-      message = "You #{vote_vals[vote.value]} this post."
+    if vote.value != 0
+      message = "You #{vote_vals[vote.value]} this post. Change Your Vote Below:"
     else
       message = "Vote Now"
     end

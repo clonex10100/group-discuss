@@ -21,6 +21,9 @@
         </li>
         <% if user_signed_in? %>
           <li class="nav-item">
+            <a class="nav-link" href="/votes" >Your Votes</a>
+          </li>
+          <li class="nav-item">
             <%= form_with url: '/users/sign_out', method: 'delete', class: 'form-inline my-lg-0' do %>
               <button class="btn btn-link text-secondary" type="submit">Logout</button>
             <% end %>
