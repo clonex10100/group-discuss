@@ -1,0 +1,2 @@
+module VoteContainersHelper
+end

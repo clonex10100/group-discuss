@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  VoteContainer: one
+  topic: 
+  value: 1
+
+two:
+  VoteContainer: two
+  topic: 
+  value: 1
