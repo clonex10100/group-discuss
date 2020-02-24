@@ -1,0 +1,12 @@
+<%= display_errors_for(vote) %>
+<%= form_with model: [vote.topic.group, vote.topic, vote] do |f|%>
+  <%= f.hidden_field :vote_container_id %>
+  <%= f.hidden_field :topic_id %>
+  <div class='form-group'>
+    <%= f.label :value, :like %>
+    <%= f.radio_button :value, 1 %>
+    <%= f.label :value, :dislike %>
+    <%= f.radio_button :value, -1 %>
+  </div>
+  <%= f.submit :vote %>
+<% end %>
