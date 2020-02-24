@@ -12,8 +12,8 @@ class Topic < ApplicationRecord
   scope :date_ascending, -> { order(created_at: :asc) }
   scope :comments_descending, -> { left_outer_joins(:comments).group('topics.title').order('count(comments.content) desc') }
   scope :comments_ascending, -> { left_outer_joins(:comments).group('topics.title').order('count(comments.content) asc') }
-  scope :votes_ascending, -> { left_outer_joins(:votes).group('topics.title').order('sum(votes.value) asc') }
-  scope :votes_descending, -> { left_outer_joins(:votes).group('topics.title').order('sum(votes.value) desc') }
+  scope :votes_ascending, -> { left_outer_joins(:votes).group('topics.title').order('CASE WHEN sum(votes.value) IS null THEN 0 ELSE sum(votes.value) END asc') }
+  scope :votes_descending, -> { left_outer_joins(:votes).group('topics.title').order('CASE WHEN sum(votes.value) IS null THEN 0 ELSE sum(votes.value) END desc') }
 
 
 
