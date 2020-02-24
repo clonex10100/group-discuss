@@ -1,6 +1,4 @@
 <div class="roundbox">
+  <h5>User: <%= link_to comment.user.username, user_path(comment.user) %></h5>
   <p><%= comment.content %></p>
-  <footer>
-    <%= link_to comment.user.username, user_path(comment.user) %>
-  </footer>
 </div>

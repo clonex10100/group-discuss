@@ -1,9 +1,10 @@
 <div class="roundbox">
+  <h3 class="float-right"><%= "Score: #{topic.voteAmount}" %></h3>
   <h1><%= link_to topic.title, group_topic_path(topic.group, topic) %></h1>
   <p><%= topic.preview %></p>
-  <p><%= "Score: #{topic.voteAmount}" %></p>
   <footer>
-  <%= link_to topic.group.name, group_path(topic.group) %>
-  <%= link_to topic.user.username, user_path(topic.user) %>
+    <h5 class="float-left">User: <%= link_to topic.user.username, user_path(topic.user) %></h5>
+    <h5 class="float-right">Group: <%= link_to topic.group.name, group_path(topic.group) %></h5>
+    <div class="clearfix"></div>
   </footer>
 </div>

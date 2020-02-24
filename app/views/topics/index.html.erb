@@ -4,7 +4,7 @@
   </div>
 <% end %>
 <%= form_with url:'/', method: 'get'  do |f| %>
-  <%= f.select(:sort, options_for_select([['Most Votes', 1], ['Least Votes', 2], ['Most Comments', 3], ['Least Comments', 4], ['Newest', 5], ['Oldest', 6]])) %>
+  <%= f.select(:sort, options_for_select([['Most Votes', 1], ['Least Votes', 2], ['Most Comments', 3], ['Least Comments', 4], ['Newest', 5], ['Oldest', 6]], params[:sort])) %>
   <%= f.submit :sort %>
 <% end %>
 <%= render partial: 'topics/topics_preview', locals: {topics: @topics} %>
