@@ -22,9 +22,9 @@ class TopicsController < ApplicationController
     @comment = @topic.comments.build(user_id: current_user.id) if user_signed_in?
     if user_signed_in?
       #If the user has voted show their vote
-      @vote = Vote.find_by_vote_container_and_topic(current_user.vote_container, @topic)
+      @vote = Vote.find_by_user_and_topic(current_user, @topic)
       #otherwise create an empty one
-      @vote = @topic.votes.build(vote_container_id: current_user.vote_container.id) unless @vote
+      @vote = Vote.new(value: 0, user: current_user, topic: @topic) unless @vote
     end
   end
 

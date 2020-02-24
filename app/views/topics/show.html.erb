@@ -1,6 +1,15 @@
 <div class="roundbox">
     <h1><%= @topic.title %></h1>
     <p><%= @topic.content %></p>
+    <p><%= "Score: #{@topic.voteAmount}" %></p>
+    <% if @topic.votes.length > 0 %>
+    <p>Voters: </p>
+    <ul>
+      <% @topic.voters.each do |user| %>
+        <li><%= user.username %></li>
+      <% end %>
+    </ul>
+    <% end %>
     <footer>
     <%= link_to @topic.group.name, group_path(@topic.group) %>
     <%= link_to @topic.user.username, user_path(@topic.user) %>

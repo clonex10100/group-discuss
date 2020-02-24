@@ -13,6 +13,6 @@ class VotesController < ApplicationController
 
   private
   def params_for_vote
-    params.require(:vote).permit(:vote_container_id, :topic_id, :value);
+    params.require(:vote).permit(:user_id, :topic_id, :value);
   end
 end
